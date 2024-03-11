@@ -6,6 +6,10 @@
     /* transition:all .3s;    */
 }
 
+body {
+    background-color: blue;
+}
+
 :root {
     --width: 1000px;
     --height: calc(var(--width)*0.637);
@@ -14,7 +18,6 @@
 .container {
     height: 100vh;
     width: 100vw;
-    background-color: blue;
     display: flex;
     padding: 10px 0px;
     justify-content: center;
@@ -22,6 +25,7 @@
 }
 
 .masked{
+    position: fixed;
     height: 100%;
     width: 100%;
     max-height: 100%;
@@ -36,228 +40,10 @@
 .blur {
     width: 100vw;
     height: 100%;
-    position: absolute;
+    position: fixed;
     backdrop-filter: blur(3px);
-    display: none;
     transition: all .3s;
 }
-
-.dots {
-    z-index: 3;
-    position: absolute;
-    /* height: var(--height); */
-    width: var(--width);
-    max-height: 100%;
-    max-width: 100%;
-    aspect-ratio: 3/2;
-    background-position: center;
-}
-
-.dots-blinking {
-    animation: blinking 1s ease-in-out infinite;
-    animation-play-state: running;
-}
-
-
-/* Start of individual dot positions */
-
-.point_cascais {
-    position: absolute;
-    top: 43%;
-    left: 45%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    animation: blinking 1s ease-in-out infinite;
-    animation-play-state: paused;
-    display:show;
-}
-
-.point_dumbo {
-    position: absolute;
-    top: 42%;
-    left: 25%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_venice {
-    position: absolute;
-    top: 39%;
-    left: 51%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_thailand {
-    position: absolute;
-    top: 60%;
-    left: 82%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_cartagena {
-    position: absolute;
-    top: 59%;
-    left: 24%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_asturias {
-    position: absolute;
-    top: 41%;
-    left: 46%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_paris {
-    position: absolute;
-    top: 37%;
-    left: 49%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_pula {
-    position: absolute;
-    top: 41%;
-    left: 53%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_hochYbrig {
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_lesgets {
-    position: absolute;
-    top: 39%;
-    left: 49%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_stmoritz {
-    position: absolute;
-    top: 37%;
-    left: 51%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_goldengate {
-    position: absolute;
-    top: 42%;
-    left: 8%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_atenas {
-    position: absolute;
-    top: 45%;
-    left: 46%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-.point_tenerife {
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    width:10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
-    display:show;
-}
-
-
-/* name and location text at bottom of screen */
-
-.location {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding: 0px 30px;
-    color: #8cffa0;
-    position: absolute;
-    z-index: 2;
-    bottom: 20px;
-    align-items: end;
-}
-
-.location_name {
-    color: #8cffa0;
-    font-family: 'Courier New', monospace;
-    font-size: 2vw;
-    font-style: normal;
-}
-
-.coordinates {
-    font-size: 1.5vw;
-}
-.location {
-    font-family: 'Courier New', monospace;
-}
-
-@keyframes blinking {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: .5;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 
 
 /* posters & images flipping cards */
@@ -287,7 +73,6 @@
     height: 500px;
     background-image: url("images/Cascais.jpg");
     background-size: cover;
-    display:show;
 }
 
 .photo-cascais {
@@ -303,7 +88,6 @@
     height: 500px;
     background-image: url("images/Dumbo.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-dumbo {
@@ -319,7 +103,6 @@
     height: 500px;
     background-image: url("images/Venice.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-venice {
@@ -335,7 +118,6 @@
     height: 500px;
     background-image: url("images/Thailand.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-thailand {
@@ -351,7 +133,6 @@
     height: 500px;
     background-image: url("images/Cartagena.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-cartagena {
@@ -368,7 +149,6 @@
     height: 500px;
     background-image: url("images/Asturias.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-asturias {
@@ -384,7 +164,6 @@
     height: 500px;
     background-image: url("images/Paris.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-paris {
@@ -400,7 +179,6 @@
     height: 500px;
     background-image: url("images/Pula.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-pula {
@@ -416,7 +194,6 @@
     height: 500px;
     background-image: url("images/hochYbrig.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-hochYbrig {
@@ -432,7 +209,6 @@
     height: 500px;
     background-image: url("images/Les_Gets.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-lesgets {
@@ -448,7 +224,6 @@
     height: 500px;
     background-image: url("images/stmoritz.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-stmoritz {
@@ -464,7 +239,6 @@
     height: 500px;
     background-image: url("images/Golden_Gate.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-goldengate {
@@ -481,7 +255,6 @@
     height: 500px;
     background-image: url("images/Atenas.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-atenas {
@@ -497,7 +270,6 @@
     height: 500px;
     background-image: url("images/Tenerife.jpg");
     background-size: cover;
-    display:none;
 }
 
 .photo-tenerife {
@@ -509,7 +281,7 @@
 }
 
 .grid {
-    position: absolute;
+    position: fixed;
     z-index: 5;
     width: 50px;
     height: 50px;
@@ -528,14 +300,22 @@
     height: 53px;
 }
 
-.postcards-grid {
+.postcards2 {
     z-index: 5;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 350px;
-    height: 500px;
-    display: flex;
+    width: 100%;
+    height: 100%;
+    top: 10vh;
+    align-items: center;
+    justify-content: space-around;
+    display:flex;
     flex-wrap: wrap;
     transform-style: preserve-3d;
+}
+
+.cards{
+    margin: 10px 10px;
+}
+.cards:hover {
+    box-shadow: 1px 1px 8px black;
 }
