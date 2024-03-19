@@ -5,6 +5,15 @@ $( document ).ready(function() {
     });
 
 
+
+    // Close Intro window
+    $(".close").click(function(){
+        $(".intro").toggle()
+    });
+
+
+
+
     /// Cascais
 
     $(".point_cascais").mouseover(function(){
@@ -373,6 +382,32 @@ $( document ).ready(function() {
     $(function() {
         $( ".postcards" ).draggable();
      });
+
+
+    //Resize 
+    var aspectRatio; 
+    var windowWidth;
+    var windowHeight;
+    
+    $(window).resize(function(){
+        windowHeight = $(window).height()
+        windowWidth = $(window).width()
+        aspectRatio = windowWidth/windowHeight
+        console.log(aspectRatio)
+
+        if (aspectRatio > 1.57){
+            console.log("change CSS")
+            var dotsheight = $(".dots").height()
+            $(".dots").css({"width":`${dotsheight*1.57}px`})
+        }
+
+        if (aspectRatio < 1.57){
+            $(".dots").css({"width":`100vw`})
+        }
+
+      });
+
+
 
 
 
